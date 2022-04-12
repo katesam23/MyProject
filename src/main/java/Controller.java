@@ -6,7 +6,6 @@ import java.io.*;
 public class Controller {
 
     public void addToJson(Student student) throws IOException {
-        String jsonString = "{\"FIO\": , \"group\": , \"enrolldate\": }";
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();
         Gson gson = builder.create();
