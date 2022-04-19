@@ -2,6 +2,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class Controller {
 
@@ -12,6 +13,24 @@ public class Controller {
         FileWriter writer = new FileWriter("save.json");
         writer.write(gson.toJson(student));
         writer.close();
+    }
+
+    public void addNewStudent(Student student){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите данные студента");
+        System.out.println("Для завершения создания введите \"Создать\"");
+        while (! scanner.nextLine().equals("Создать")){
+            System.out.println("Фамилия Имя Отчество: ");
+            String FIO = scanner.nextLine();
+            while (true){
+                if (FIO.length() == 0){
+                    System.out.println("Вы не ввели имя!");
+                    FIO = scanner.nextLine();
+                }else {break;}
+            }
+            System.out.println("Группа: ");
+
+        }
     }
 
     public void remove(){
